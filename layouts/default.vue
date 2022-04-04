@@ -12,13 +12,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 @import url('https://v1.fontapi.ir/css/Vazir');
 
 .v-application {
-  font-family: Vazirmatn, sans-serif;
+  font-family: Vazirmatn, sans-serif !important;
 }
-.container {
+
+.content-container {
     max-width: 1000px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-    <v-container>
-        <v-app-bar flat color='#fff' class="my-6 px-4"> 
+    <v-container class="content-container ">
+        <v-row class="my-6"> 
             <base-button @click="Clicked" text buttonClass='primaryBtn' :ripple=false to=/register>
                 ثبت نام
             </base-button>
@@ -29,7 +29,7 @@
                     src="../assets/o6jn5na3u4aw.jpeg"
                 ></v-img>
             </base-button>
-        </v-app-bar>
+        </v-row>
     </v-container>
 </template>
 
