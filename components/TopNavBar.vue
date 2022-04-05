@@ -52,11 +52,9 @@ export default {
         onWaypoint ({ going, direction }) {
         if (going === this.$waypointMap.GOING_IN && direction === this.$waypointMap.DIRECTION_TOP) {
             this.isOut = true
-            console.log('in')
         }
         if (going === this.$waypointMap.GOING_OUT && direction === this.$waypointMap.DIRECTION_BOTTOM) {
             this.isOut = false
-            console.log('in')
         }
         },
         Clicked(){
