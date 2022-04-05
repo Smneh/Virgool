@@ -3,7 +3,7 @@
       <v-app-bar flat color='#fff' height='max-content'>
         <nav-bar />
       </v-app-bar>
- </v-row> 
+ </v-row>
 </template>
 
 <script>
