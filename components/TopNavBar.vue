@@ -1,5 +1,5 @@
 <template>
-    <v-container class="content-container" :class="{ 'hidden': isOut }">
+    <v-container class="content-container" :class="[ isOut ? 'hidden' : 'show' ]">
         <div v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }">
             <v-row class="my-6"> 
                 <base-button @click="Clicked" text buttonClass='primaryBtn' :ripple=false to=/register>
@@ -50,22 +50,32 @@ export default {
         },
     methods: {
         onWaypoint ({ going, direction }) {
-        if (going === this.$waypointMap.GOING_IN && direction === this.$waypointMap.DIRECTION_TOP) {
-            this.isOut = true
-        }
-        if (going === this.$waypointMap.GOING_OUT && direction === this.$waypointMap.DIRECTION_BOTTOM) {
+        if (going === this.$waypointMap.GOING_IN) {
             this.isOut = false
+            this.$emit('top-nav-is-in')
+        }
+        if (going === this.$waypointMap.GOING_OUT) {
+            this.isOut = true
+            this.$emit('top-nav-is-out')
         }
         },
         Clicked(){
                 console.log("hello")
-            }
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .hidden{
-    display: none;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.show{
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.5s, opacity 0.55s linear;
+
 }
 </style>

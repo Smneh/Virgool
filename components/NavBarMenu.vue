@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid class="primaryBg">
+    <v-container fluid class="primaryBg" :class="{'fixed-menu' : fixed }">
         <v-container class="content-container">
             <v-row> 
                 <ul>
@@ -14,6 +14,7 @@
 export default {
         data () {
             return {
+                fixed:false,
                 items: [
                     'جدید ترین پست ها',
                     'پست های دوستان',
@@ -26,6 +27,14 @@ export default {
                     'حال خوبتو با من تقسیم کن'
                 ]
             }
+    },
+    methods:{
+        setPositionFix(){
+            this.fixed = true
+        },
+        removePositionFix(){
+            this.fixed = false
+        }
     }
 }
 </script>
@@ -35,6 +44,18 @@ export default {
 .primaryBg{
     background-color: $primary-blue !important;
     color: $white;
+    top: 100px;
+    position: absolute;
+    transition:top 0.5s linear;
+}
+
+.fixed-menu{
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    transition:top 0s linear;
 }
 
 ul {
