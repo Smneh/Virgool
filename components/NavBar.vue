@@ -1,8 +1,8 @@
 <template>
-   <v-container fluid class="pa-0 main-navbar" >
+   <div class="main-navbar" >
       <top-nav-bar @top-nav-is-out="fixMenu" @top-nav-is-in='unfixMenu' ></top-nav-bar>
       <nav-bar-menu ref="menu"></nav-bar-menu>
-   </v-container>
+   </div>
 </template>
 
 <script>
@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.main-navbar{
+   width: 100%;
+}
 </style>

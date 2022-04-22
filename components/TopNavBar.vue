@@ -1,38 +1,37 @@
 <template>
-    <v-container class="content-container" :class="[ isOut ? 'hidden' : 'show' ]">
-        <div v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }">
-            <v-row class="my-6"> 
-                <base-button @click="Clicked" text buttonClass='primaryBtn' :ripple=false to=/register>
-                    ثبت نام
-                </base-button>
+    <div class="content-container py-6" :class="[ isOut ? 'hidden' : 'show' ]">
+        <div 
+            class="top-navbar"
+            v-intersect="{
+            handler: onIntersect,
+            options: {threshold: [0, 0.5, 1.0]}
+            }"
+        >
+            <base-button @click="Clicked" text buttonClass='light-btn' :ripple=false>
+                <virgool-icon/>
+            </base-button>
 
-                    <base-button @click="Clicked" text buttonClass='lightBtn' :ripple=false>
-                    ورود
-                </base-button>
+            <base-button @click="Clicked" text buttonClass='light-btn mr-3' :ripple=false >
+                ویرگول چیست؟
+            </base-button>
 
-                    <base-button @click="Clicked" icon :ripple=false>
-                        <v-icon >
-                            mdi-magnify
-                        </v-icon>
-                </base-button>
+            <v-spacer />
 
-                <v-spacer />
+            <base-button @click="Clicked" icon :ripple=false text color='rgb(142, 142, 142)'>
+                    <v-icon >
+                        mdi-magnify
+                    </v-icon>
+            </base-button>
 
-                <base-button @click="Clicked" text buttonClass='lightBtn' :ripple=false>
-                    ویرگول چیست؟
-                </base-button>
+            <base-button @click="Clicked" text buttonClass='light-btn mx-5' :ripple=false>
+                ورود
+            </base-button>
 
-                <base-button @click="Clicked" text buttonClass='lightBtn' :ripple=false>
-                    <v-img
-                        lazy-src="../assets/o6jn5na3u4aw.jpeg"
-                        max-height="300"
-                        max-width="219"
-                        src="../assets/o6jn5na3u4aw.jpeg"
-                    ></v-img>
-                </base-button>
-            </v-row>
+            <base-button @click="Clicked" text buttonClass='primary-btn px-6 py-1' :ripple=false to=/register >
+                ثبت نام
+            </base-button>
         </div>    
-    </v-container>
+    </div>
 </template>
 
 <script>
@@ -41,23 +40,17 @@ export default {
     data () {
         return {
             isOut : false,
-            intersectionOptions: {
-                root: null,
-                rootMargin: '0px 0px 0px 0px',
-                threshold: [0, 1], 
-            },
-            } // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-        },
+        }
+    },
     methods: {
-        onWaypoint ({ going, direction }) {
-        if (going === this.$waypointMap.GOING_IN) {
-            this.isOut = false
-            this.$emit('top-nav-is-in')
-        }
-        if (going === this.$waypointMap.GOING_OUT) {
-            this.isOut = true
-            this.$emit('top-nav-is-out')
-        }
+        onIntersect (entries, observer) {    
+            if(entries[0].intersectionRatio >= 0.5){
+                this.isOut = false
+                this.$emit('top-nav-is-in')
+            }else{
+                this.isOut = true
+                this.$emit('top-nav-is-out')
+            }
         },
         Clicked(){
                 console.log("hello")
@@ -76,6 +69,11 @@ export default {
   transform: translateY(0);
   opacity: 1;
   transition: transform 0.5s, opacity 0.55s linear;
+}
 
+.top-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
