@@ -5,7 +5,8 @@
     </header>
     <div class="home-page">
       <recommended-posts />       
-      <promotion-box />       
+      <promotion-box />
+      <home-page-content />       
     </div>
   </div>
 </template>
@@ -19,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .home-page{
-  background-color: $home-bg;
+  background-color: $gray-100;
   padding: 80px 0;
 }
 </style>
