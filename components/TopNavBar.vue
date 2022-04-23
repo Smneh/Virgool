@@ -17,10 +17,10 @@
 
             <v-spacer />
 
-            <base-button @click="Clicked" icon :ripple=false text color='rgb(142, 142, 142)'>
-                    <v-icon >
-                        mdi-magnify
-                    </v-icon>
+            <base-button @click="Clicked" icon :ripple=false text buttonClass='gray-btn'>
+                <v-icon >
+                    mdi-magnify
+                </v-icon>
             </base-button>
 
             <base-button @click="Clicked" text buttonClass='light-btn mx-5' :ripple=false>
