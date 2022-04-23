@@ -22,7 +22,7 @@ export default {
     direction: rtl;
     word-wrap: break-word;
     background-color: $white;
-    color: $text-color;
+    color: $gray-900;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0;
@@ -49,6 +49,11 @@ export default {
 
 .row{
   margin: 0 !important;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
 }
 
 </style>

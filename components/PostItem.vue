@@ -44,11 +44,6 @@ export default {
     z-index: 1;
     margin-bottom: 16px;
 
-    a{
-        color: inherit;
-        text-decoration: none;
-    }
-
     .bg-image-container{
         &::before{
             position: absolute;
