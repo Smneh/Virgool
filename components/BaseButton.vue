@@ -134,22 +134,32 @@ export default {
 }
 
 .primary-btn{
-  background-color: $primary-blue;
+  background-color: $color-blue;
   color : $white !important;
 }
 
 .light-btn {
   background-color: $white;
-  color :  $primary-blue !important;
+  color :  $color-blue !important;
   
   &:hover{
     color: $dark-blue-text !important;
   }
 }
 
+.gray-btn{
+  color: $gray-600 !important;
+}
+
 .start-btn{
   &:hover{
     background-color: $dark-blue-bg;
+  }
+}
+
+.like-btn{
+  &:hover{
+    color: $red-100 !important;
   }
 }
 

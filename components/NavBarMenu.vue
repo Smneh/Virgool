@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 
 .primaryBg{
-    background-color: $primary-blue !important;
+    background-color: $color-blue !important;
     color: $white;
     top: 100px;
     position: absolute;
