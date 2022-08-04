@@ -1,4 +1,4 @@
-This is a simple exercise (not completed) to recreate https://virgool.io/ page by using vue2 and vuetify to get familiar with them .
+This is a simple exercise (not completed) to recreate https://virgool.io/ page by using vue2 , nuxt and vuetify to get familiar with them .
 ## Build Setup
 
 ```bash
